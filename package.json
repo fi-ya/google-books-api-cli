@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/fi-ya/google-books-api-cli#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "boxen": "^5.0.1",
     "chalk": "^4.1.1"
   }
