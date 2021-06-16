@@ -32,9 +32,10 @@ function mainMenu() {
     );
 
     if(`${menu}`== 1 ){
-        const search = prompt(
+        console.log(
           chalk.white('What book would you like to search for? ')
         );
+        const search = prompt();
         console.log(
           chalk.white(`Searching for books about: `) + chalk.red(`${search} \n`)
         );
@@ -56,27 +57,29 @@ function mainMenu() {
 
 function searchMenu(bookArray) {
 
-    const searchMenu = prompt(
+    console.log(
         chalk.white(
             'Select Option \n 1: Save book to reading list \n 2: Exit to main menu'
         )
     );
+    const searchMenu = prompt();
     console.log(
         chalk.white(`You have selected option  `) + chalk.red(`${searchMenu} \n`)
     );
 
     if (`${searchMenu}` == 1) {
-        const chosenBookId = prompt(
+        console.log(
             chalk.white('Insert the book number you would like to save to your reading list?')
         );
+        const chosenBookId = prompt();
         console.log(
             chalk.white(`Saving book number `) + chalk.red(`${chosenBookId} \n`)
         );
 
         if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
           let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
-          // console.log(JSON.stringify(chosenBook));
-          saveToReadingList(chosenBook);
+            if(chosenBook) saveToReadingList(chosenBook);
+
         } else {
           console.log(
             chalk.red
@@ -106,9 +109,8 @@ fs.writeFile('readingList.json', data, finished);
 
   function finished(err) {
     console.log('Saved to reading list!');
+    getReadingList();
   }
-
-  getReadingList();
 
 }
 
@@ -132,10 +134,11 @@ function getReadingList() {
 
 function readingListMenu(){
 
-    const readingListMenu = prompt(
+    console.log(
       chalk.white(
         'Select Option & Press ENTER \n 1: Back to main menu \n 2: Exit \n')
     );
+    const readingListMenu = prompt();
     console.log(
       chalk.white(`You have selected option  `) + chalk.red(`${readingListMenu} \n`)
     );

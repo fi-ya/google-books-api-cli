@@ -1,0 +1,68 @@
+{
+  "readingList": [
+    {
+      "menuID": 4,
+      "title": "The House by the Sea",
+      "author": [
+        "Louise Douglas"
+      ],
+      "publisher": "Boldwood Books Ltd"
+    },
+    {
+      "menuID": 1,
+      "title": "Harry Potter",
+      "author": [
+        "J. K. Rowling"
+      ],
+      "publisher": "Bloomsbury Publishing"
+    },
+    {
+      "menuID": 2,
+      "title": "Sunshine",
+      "author": [
+        "Robin McKinley"
+      ],
+      "publisher": "Random House"
+    },
+    {
+      "menuID": 1,
+      "title": "Baltimore's Boxing Legacy",
+      "author": [
+        "Thomas Scharf"
+      ],
+      "publisher": "Arcadia Publishing"
+    },
+    {
+      "menuID": 2,
+      "title": "Bird Box",
+      "author": [
+        "Josh Malerman"
+      ],
+      "publisher": "Ecco"
+    },
+    {
+      "menuID": 1,
+      "title": "The Book of Dave",
+      "author": [
+        "Will Self"
+      ],
+      "publisher": "Penguin UK"
+    },
+    {
+      "menuID": 5,
+      "title": "Black British Feminism",
+      "author": [
+        "Heidi Safia Mirza"
+      ],
+      "publisher": "Psychology Press"
+    },
+    {
+      "menuID": 2,
+      "title": "Happy",
+      "author": [
+        "Fearne Cotton"
+      ],
+      "publisher": "Hachette UK"
+    }
+  ]
+}
