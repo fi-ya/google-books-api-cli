@@ -22,10 +22,11 @@ mainMenu();
 
 function mainMenu() {
 
-    const menu = prompt(
+    console.log(
       chalk.white(
         'Select Option & Press ENTER \n 1: Search for books \n 2: View Reading List \n 3: Exit \n')
     );
+    const menu = prompt();
     console.log(
       chalk.white(`You have selected option  `) + chalk.red(`${menu} \n`)
     );
@@ -39,10 +40,10 @@ function mainMenu() {
         );
         getBookDetails(search);
 
-    } else if (`${menu}` == 2) {        // view readingList.JSON
-        console.log('call getReadingList()');
+    } else if (`${menu}` == 2) {
+        getReadingList();
 
-    } else if (`${menu}` == 3) {        // view readingList.JSON
+    } else if (`${menu}` == 3) {
         process.exit(1);
     } else {
         console.log(
@@ -96,7 +97,6 @@ function searchMenu(bookArray) {
     }
 }
 
-
 function saveToReadingList(chosenBook) {
 let readingListJSON = readFromReadingListJSONFile();
 
@@ -107,8 +107,8 @@ fs.writeFile('readingList.json', data, finished);
   function finished(err) {
     console.log('Saved to reading list!');
   }
-    
-  getreadinglist();
+
+  getReadingList();
 
 }
 
@@ -117,8 +117,7 @@ function readFromReadingListJSONFile() {
     return JSON.parse(file);
 }
 
-
-function getreadinglist() {
+function getReadingList() {
 
     let display = readFromReadingListJSONFile();
     console.log(`Your reading list: `);
@@ -130,7 +129,6 @@ function getreadinglist() {
     readingListMenu();
 
 }
-
 
 function readingListMenu(){
 
@@ -153,6 +151,7 @@ function readingListMenu(){
           `)
         );
         readingListMenu();
+    }
 }
 
 function getBookDetails(search) {
