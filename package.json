@@ -1,0 +1,23 @@
+{
+  "name": "google-books-api-cli",
+  "version": "1.0.0",
+  "description": "8th Light Technical Assessment.A command line application that allows you to use the Google Books API to search for books and construct a reading list.",
+  "main": "bin/index.js",
+  "bin": {
+    "google-books-api-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fi-ya/google-books-api-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fi-ya/google-books-api-cli/issues"
+  },
+  "homepage": "https://github.com/fi-ya/google-books-api-cli#readme"
+}
