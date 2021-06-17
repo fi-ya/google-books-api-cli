@@ -72,6 +72,52 @@
         "Jill Carle"
       ],
       "publisher": "Ten Speed Press"
+    },
+    {
+      "menuID": 2,
+      "title": "When I Feel Sad",
+      "author": [
+        "Cornelia Maude Spelman",
+        "Kathy Parkinson"
+      ],
+      "publisher": "Albert Whitman & Company"
+    },
+    {
+      "menuID": 5,
+      "title": "This Is Water",
+      "author": [
+        "David Foster Wallace"
+      ],
+      "publisher": "Hachette UK"
+    },
+    {
+      "menuID": 2,
+      "title": "The Book of Book Lists",
+      "author": [
+        "JOHNSON"
+      ]
+    },
+    {
+      "menuID": 2,
+      "title": "The Book of Book Lists",
+      "author": [
+        "JOHNSON"
+      ]
+    },
+    {
+      "menuID": 3,
+      "title": "Empire of Sand",
+      "author": [
+        "Tasha Suri"
+      ],
+      "publisher": "Hachette UK"
+    },
+    {
+      "menuID": 2,
+      "title": "The Red Books of Humphry Repton: Explanatory volume",
+      "author": [
+        "Humphry Repton"
+      ]
     }
   ]
 }

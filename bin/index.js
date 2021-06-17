@@ -22,22 +22,23 @@ mainMenu();
 
 function mainMenu() {
 
+    console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
     console.log(
       chalk.white(
-        'Select Option & Press ENTER \n 1: Search for books \n 2: View Reading List \n 3: Exit \n')
+        'Select an option: \n 1: Search for Books \n 2: View Reading List \n 3: Exit\n')
     );
     const menu = prompt();
-    console.log(
-      chalk.white(`You have selected option  `) + chalk.red(`${menu} \n`)
-    );
+    // console.log(
+    //   chalk.white(`\nYou have selected option:  `) + chalk.red(`${menu} `)
+    // );
 
     if(`${menu}`== 1 ){
         console.log(
-          chalk.white('What book would you like to search for? ')
+          chalk.white('\nWhat book would you like to search for? ')
         );
         const search = prompt();
         console.log(
-          chalk.white(`Searching for books about: `) + chalk.red(`${search} \n`)
+          chalk.cyan.inverse(`\nBooks about '${search}': `)
         );
         getBookDetails(search);
 
@@ -45,10 +46,15 @@ function mainMenu() {
         getReadingList();
 
     } else if (`${menu}` == 3) {
+        const exitGreeting =
+          chalk.white.bold(`Have a great day. Goodbye! 😊 `)
+        ;
+        const msgBox2 = boxen(exitGreeting, boxenOptions);
+        console.log(msgBox2);
         process.exit(1);
     } else {
         console.log(
-          chalk.red.bold(`Option not available. Please try again! \n
+          chalk.red.bold(`\nOption not available. Please try again!
           `)
         );
         mainMenu();
@@ -56,24 +62,26 @@ function mainMenu() {
 }
 
 function searchMenu(bookArray) {
-
+    console.log(chalk.greenBright.inverse.bold('Search Menu\n'));
     console.log(
-        chalk.white(
-            'Select Option \n 1: Save book to reading list \n 2: Exit to main menu'
-        )
+      chalk.white(
+        'Select an option: \n 1: Save book to reading list \n 2: Back to main menu\n '
+      )
     );
     const searchMenu = prompt();
-    console.log(
-        chalk.white(`You have selected option  `) + chalk.red(`${searchMenu} \n`)
-    );
+    // console.log(
+    //   chalk.white(`\nYou have selected option  `) + chalk.red(`${searchMenu}`)
+    // );
 
     if (`${searchMenu}` == 1) {
         console.log(
-            chalk.white('Insert the book number you would like to save to your reading list?')
+          chalk.white(
+            '\nInsert the book number you would like to save to your reading list? '
+          )
         );
         const chosenBookId = prompt();
         console.log(
-            chalk.white(`Saving book number `) + chalk.red(`${chosenBookId} \n`)
+          chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
         );
 
         if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
@@ -83,20 +91,20 @@ function searchMenu(bookArray) {
         } else {
           console.log(
             chalk.red
-              .bold(`Book number not available. Please pick a number between 1-5! \n
+              .bold(`\nBook number not available. Please pick a number between 1-5!
           `)
           );
-          searchMenu();
+          searchMenu(bookArray);
         }
 
     } else if (`${searchMenu}` == 2) {
         mainMenu();
     } else {
         console.log(
-            chalk.red.bold(`Option not available. Please try again! \n
+          chalk.red.bold(`Option not available. Please try again!\n
           `)
         );
-        searchMenu();
+        searchMenu(bookArray);
     }
 }
 
@@ -108,7 +116,7 @@ let data = JSON.stringify(readingListJSON, null, 2);
 fs.writeFile('readingList.json', data, finished);
 
   function finished(err) {
-    console.log('Saved to reading list!');
+    console.log('\nSaved to reading list!');
     getReadingList();
   }
 
@@ -122,35 +130,44 @@ function readFromReadingListJSONFile() {
 function getReadingList() {
 
     let display = readFromReadingListJSONFile();
-    console.log(`Your reading list: `);
+    console.log(chalk.red.bold.inverse(`\nYour reading list: `));
     display.readingList.forEach(item => {
 
-        console.log(` Title: ${item.title}, Author(s): ${item.author},  Publisher: ${item.publisher} `)
+        console.log(
+                    chalk.red.bold(` \n Title:`) +
+                    chalk.white(` ${item.title} `) +
+                    chalk.red.bold(` Author(s):`) +
+                    chalk.white(` ${item.author} `) +
+                    chalk.red.bold(` Publisher: `) +
+                    chalk.white(` ${item.publisher}`)
+        );
     });
-
+    
     readingListMenu();
-
 }
 
 function readingListMenu(){
-
+    console.log(chalk.greenBright.inverse.bold('\nReading List Menu\n'));
     console.log(
-      chalk.white(
-        'Select Option & Press ENTER \n 1: Back to main menu \n 2: Exit \n')
+      chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
     );
     const readingListMenu = prompt();
-    console.log(
-      chalk.white(`You have selected option  `) + chalk.red(`${readingListMenu} \n`)
-    );
+    // console.log(
+    //   chalk.white(`\nYou have selected option  `) +
+    //     chalk.red(`${readingListMenu} `)
+    // );
 
     if(`${readingListMenu}`== 1 ){
         mainMenu();
 
-    } else if (`${readingListMenu}` == 2) {        // view readingList.JSON
+    } else if (`${readingListMenu}` == 2) {
+        const exitGreeting = chalk.white.bold(`Have a great day. Goodbye! 😊 `);
+        const msgBox2 = boxen(exitGreeting, boxenOptions);
+        console.log(msgBox2);
         process.exit(1);
     } else {
         console.log(
-          chalk.red.bold(`Option not available. Please try again! \n
+          chalk.red.bold(`\nOption not available. Please try again!
           `)
         );
         readingListMenu();
@@ -181,7 +198,14 @@ function getBookDetails(search) {
                 bookArray.push(book);
 
                 console.log(
-                    chalk.blue.bold(`Book Number:`) + ` ${[book.menuID]} Title: ${book.title} Author(s): ${book.author} Publisher: ${book.publisher} `
+                  chalk.white.bold(`\n Book Number:`) +
+                    chalk.blue.bold(` ${[book.menuID]}`) +
+                    chalk.red.bold(` Title:`) +
+                    chalk.white(` ${book.title} `) +
+                    chalk.red.bold(` Author(s):`) +
+                    chalk.white(` ${book.author} `) +
+                    chalk.red.bold(` Publisher: `) +
+                    chalk.white(` ${book.publisher} \n`)
                 );
             }
             searchMenu(bookArray);
