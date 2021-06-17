@@ -80,26 +80,12 @@
       "publisher": "Candlewick Press"
     },
     {
-      "menuID": 3,
-      "title": "Coding For Dummies",
+      "menuID": 5,
+      "title": "The Girl of Ink & Stars",
       "author": [
-        "Nikhil Abraham"
+        "Kiran Millwood Hargrave"
       ],
-      "publisher": "John Wiley & Sons"
-    },
-    {
-      "menuID": 2,
-      "title": "Eloquent JavaScript",
-      "author": [
-        "Marijn Haverbeke"
-      ]
-    },
-    {
-      "menuID": 1,
-      "title": "Lists and Indexes",
-      "author": [
-        "Great Britain. Public Record Office"
-      ]
+      "publisher": "Chicken House"
     }
   ]
 }
