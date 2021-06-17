@@ -13,7 +13,6 @@ welcomeMessage();
 mainMenu();
 
 function welcomeMessage() {
-
   const greeting = chalk.white.bold(
     "Welcome to 8th Light's Google Books CLI API"
   );
@@ -58,29 +57,17 @@ function welcomeMessage() {
 
 function mainMenu() {
   console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
+
   console.log(
     chalk.white(
       'Select an option: \n 1: Search for Books \n 2: View Reading List \n 3: Exit\n'
     )
   );
+
   const menu = prompt();
 
   if (`${menu}` == 1) {
-    console.log(chalk.white('\nWhat book would you like to search for? '));
-    let search = prompt();
-
-    if (`${search}` === '') {
-      console.log(
-        chalk.red(
-          '\nNothing selected. Please enter the book or phrase you would like to search.  '
-        )
-      );
-      console.log(chalk.white('\nWhat book would you like to search for? '));
-      search = prompt();
-    }
-
-    console.log(chalk.cyan.inverse(`\nBooks about '${search}': `));
-    getBookDetails(search);
+    searchForBookMainMenuOption();
   } else if (`${menu}` == 2) {
     getReadingList();
   } else if (`${menu}` == 3) {
@@ -94,6 +81,24 @@ function mainMenu() {
   }
 }
 
+function searchForBookMainMenuOption() {
+  console.log(chalk.white('\nWhat book would you like to search for? '));
+  let search = prompt();
+
+  if (`${search}` === '') {
+    console.log(
+      chalk.red(
+        '\nNothing selected. Please enter the book or phrase you would like to search.  '
+      )
+    );
+    console.log(chalk.white('\nWhat book would you like to search for? '));
+    search = prompt();
+  }
+
+  console.log(chalk.cyan.inverse(`\nBooks about '${search}': `));
+  getBookDetails(search);
+}
+
 function exitProgram() {
   const exitGreeting = chalk.white.bold(`Have a great day. Goodbye! 😊 `);
   const msgBox2 = boxen(exitGreeting, config.boxenOptions);
@@ -102,7 +107,9 @@ function exitProgram() {
 }
 
 function searchMenu(bookArray) {
+
   console.log(chalk.greenBright.inverse.bold('Search Menu\n'));
+
   console.log(
     chalk.white(
       'Select an option: \n 1: Save book to reading list \n 2: Back to main menu\n '
@@ -111,7 +118,7 @@ function searchMenu(bookArray) {
   const searchMenu = prompt();
 
   if (`${searchMenu}` == 1) {
-    /// function goToMainMenu
+    /// function
     console.log(
       chalk.white(
         '\nInsert the book number you would like to save to your reading list? '
@@ -126,7 +133,7 @@ function searchMenu(bookArray) {
       );
       if (chosenBook) saveToReadingList(chosenBook);
     } else {
-      /// function goToMainMenu
+
       console.log(
         chalk.red.bold(`\nBook number not available. Try again!
           `)
@@ -134,15 +141,25 @@ function searchMenu(bookArray) {
       mainMenu();
     }
   } else if (`${searchMenu}` == 2) {
+
     mainMenu();
+
   } else {
+
     console.log(
       chalk.red.bold(`Option not available. Please try again!\n
           `)
     );
+
     mainMenu();
   }
 }
+
+// function goToMainMenuOption() {
+
+// }
+
+
 
 function saveToReadingList(chosenBook) {
   let readingListJSON = readFromReadingListJSONFile(config.readingListFile);
@@ -255,4 +272,5 @@ module.exports = {
   readingListMenu,
   getBookDetails,
   exitProgram,
+  searchForBookMainMenuOption,
 };
