@@ -96,38 +96,32 @@ function searchMenu(bookArray) {
     );
       let chosenBookId = prompt();
 
-    console.log(
-      chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
-    );
+      if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
 
-    if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
-      let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
-      if (chosenBook) saveToReadingList(chosenBook);
-    } else {
+        let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
+        console.log(
+          chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
+        );
+        if (chosenBook) saveToReadingList(chosenBook);
+
+      } else {
+
       console.log(
         chalk.red
-          .bold(`\nBook number not available. Please pick a number between 1-5!
+          .bold(`\nBook number not available. Try again!
           `)
       );
-          //console.log(
-            //chalk.white(
-             //'\nInsert the book number you would like to save to your reading list? '
-            //)
-          //);
-          //chosenBookId = prompt();
-
-      // not working error: TypeError: searchMenu is not a function
-      //searchMenu(bookArray);
+      mainMenu();
     }
   } else if (`${searchMenu}` == 2) {
     mainMenu();
   } else {
-    console.log(
-      chalk.red.bold(`Option not available. Please try again!\n
+      console.log(
+          chalk.red.bold(`Option not available. Please try again!\n
           `)
-    );
-    //mainMenu();
-    searchMenu(bookArray);
+      );
+    mainMenu();
+
   }
 }
 
