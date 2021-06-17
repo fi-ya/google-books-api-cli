@@ -1,37 +1,37 @@
 #!/usr/bin/env node
-
 const chalk = require('chalk');
 const boxen = require('boxen');
 const axios = require('axios');
 const prompt = require('prompt-sync')();
 const fs = require('fs');
 const { config } = require('./config');
+const { welcomeMessage } = require('./utils/welcomeMessage');
 // const { mainMenu } = require('./src/mainMenu');
 // const { searchMenu } = require('./src/searchMenu');
 
 welcomeMessage();
 mainMenu();
 
-function welcomeMessage() {
-  const greeting = chalk.white.bold(
-    "Welcome to 8th Light's Google Books CLI API"
-  );
+// function welcomeMessage() {
+//   const greeting = chalk.white.bold(
+//     "Welcome to 8th Light's Google Books CLI API"
+//   );
 
-  const msgBox = boxen(greeting, config.boxenOptions);
+//   const msgBox = boxen(greeting, config.boxenOptions);
 
-  console.log(msgBox);
+//   console.log(msgBox);
 
-  console.log(
-    chalk.bold.inverse.cyanBright(`Hello!`) +
-      chalk.cyan(
-        `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
-      ) +
-      chalk.cyan(
-        `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
-      ) +
-      chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
-  );
-}
+//   console.log(
+//     chalk.bold.inverse.cyanBright(`Hello!`) +
+//       chalk.cyan(
+//         `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
+//       ) +
+//       chalk.cyan(
+//         `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
+//       ) +
+//       chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
+//   );
+// }
 
 function mainMenu() {
   console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
@@ -242,7 +242,6 @@ function viewBookData(book) {
 }
 
 module.exports = {
-  welcomeMessage,
   mainMenu,
   searchForBookMainMenuOption,
   getReadingList,
