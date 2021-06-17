@@ -46,6 +46,30 @@
         "Nicholas Monsarrat"
       ],
       "publisher": "Burford Books"
+    },
+    {
+      "menuID": 1,
+      "title": "Peas & Queues",
+      "author": [
+        "Sandi Toksvig"
+      ],
+      "publisher": "Profile Books"
+    },
+    {
+      "menuID": 1,
+      "title": "There are Cats in this Book",
+      "author": [
+        "Viviane Schwarz"
+      ],
+      "publisher": "Walker"
+    },
+    {
+      "menuID": 3,
+      "title": "Star Trek Cats",
+      "author": [
+        "Jenny Parks"
+      ],
+      "publisher": "Chronicle Books"
     }
   ]
 }

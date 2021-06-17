@@ -118,34 +118,10 @@ function searchMenu(bookArray) {
   const searchMenu = prompt();
 
   if (`${searchMenu}` == 1) {
-    /// function
-    console.log(
-      chalk.white(
-        '\nInsert the book number you would like to save to your reading list? '
-      )
-    );
-    let chosenBookId = prompt();
-
-    if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
-      let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
-      console.log(
-        chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
-      );
-      if (chosenBook) saveToReadingList(chosenBook);
-    } else {
-
-      console.log(
-        chalk.red.bold(`\nBook number not available. Try again!
-          `)
-      );
-      mainMenu();
-    }
+    chooseBookToSave(bookArray);
   } else if (`${searchMenu}` == 2) {
-
     mainMenu();
-
   } else {
-
     console.log(
       chalk.red.bold(`Option not available. Please try again!\n
           `)
@@ -155,9 +131,30 @@ function searchMenu(bookArray) {
   }
 }
 
-// function goToMainMenuOption() {
+function chooseBookToSave(bookArray) {
+  console.log(
+    chalk.white(
+      '\nInsert the book number you would like to save to your reading list? '
+    )
+  );
+  let chosenBookId = prompt();
 
-// }
+  if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
+    let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
+
+    console.log(
+      chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
+    );
+
+    if (chosenBook) saveToReadingList(chosenBook);
+  } else {
+    console.log(
+      chalk.red.bold(`\nBook number not available. Try again!
+          `)
+    );
+    mainMenu();
+  }
+}
 
 
 
@@ -273,4 +270,5 @@ module.exports = {
   getBookDetails,
   exitProgram,
   searchForBookMainMenuOption,
+  chooseBookToSave,
 };
