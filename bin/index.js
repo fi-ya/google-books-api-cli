@@ -125,7 +125,7 @@ function getReadingList() {
     console.log(`Your reading list: `);
     display.readingList.forEach(item => {
 
-        console.log(` Title: ${item.title} + Author(s): ${item.author} + Publisher: ${item.publisher} `)
+        console.log(` Title: ${item.title}, Author(s): ${item.author},  Publisher: ${item.publisher} `)
     });
 
     readingListMenu();
@@ -177,16 +177,11 @@ function getBookDetails(search) {
                     author: bookObj.authors,
                     publisher: bookObj.publisher
                 };
-            bookArray.push(book);
 
-
-                let id = searchArray[i].id;
-                let title = bookObj.title;
-                let author = bookObj.authors;
-                let publisher = bookObj.publisher;
+                bookArray.push(book);
 
                 console.log(
-                    chalk.blue.bold(`Book Number:`) + ` ${[i + 1,]} Book id: ${id} Title: ${title} Author(s): ${author} Publisher: ${publisher} `
+                    chalk.blue.bold(`Book Number:`) + ` ${[book.menuID]} Title: ${book.title} Author(s): ${book.author} Publisher: ${book.publisher} `
                 );
             }
             searchMenu(bookArray);

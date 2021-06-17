@@ -63,6 +63,15 @@
         "Fearne Cotton"
       ],
       "publisher": "Hachette UK"
+    },
+    {
+      "menuID": 3,
+      "title": "College Cooking",
+      "author": [
+        "Megan Carle",
+        "Jill Carle"
+      ],
+      "publisher": "Ten Speed Press"
     }
   ]
 }
