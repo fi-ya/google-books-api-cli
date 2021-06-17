@@ -1,139 +1,35 @@
 {
   "readingList": [
     {
-      "menuID": 4,
-      "title": "The House by the Sea",
+      "menuID": 1,
+      "title": "Disney The Lion King: Roar of the Pride Lands",
       "author": [
-        "Louise Douglas"
+        "Maggie Fischer"
       ],
-      "publisher": "Boldwood Books Ltd"
+      "publisher": "SFI Readerlink Dist"
+    },
+    {
+      "menuID": 2,
+      "title": "Snow White",
+      "author": [
+        "Brothers Grimm"
+      ],
+      "publisher": "Harper Design"
     },
     {
       "menuID": 1,
-      "title": "Harry Potter",
+      "title": "The Book of Pears",
       "author": [
-        "J. K. Rowling"
+        "Joan Morgan"
       ],
-      "publisher": "Bloomsbury Publishing"
-    },
-    {
-      "menuID": 2,
-      "title": "Sunshine",
-      "author": [
-        "Robin McKinley"
-      ],
-      "publisher": "Random House"
+      "publisher": "Chelsea Green Publishing"
     },
     {
       "menuID": 1,
-      "title": "Baltimore's Boxing Legacy",
+      "title": "Violations of Free Speech and Rights of Labor",
       "author": [
-        "Thomas Scharf"
-      ],
-      "publisher": "Arcadia Publishing"
-    },
-    {
-      "menuID": 2,
-      "title": "Bird Box",
-      "author": [
-        "Josh Malerman"
-      ],
-      "publisher": "Ecco"
-    },
-    {
-      "menuID": 1,
-      "title": "The Book of Dave",
-      "author": [
-        "Will Self"
-      ],
-      "publisher": "Penguin UK"
-    },
-    {
-      "menuID": 5,
-      "title": "Black British Feminism",
-      "author": [
-        "Heidi Safia Mirza"
-      ],
-      "publisher": "Psychology Press"
-    },
-    {
-      "menuID": 2,
-      "title": "Happy",
-      "author": [
-        "Fearne Cotton"
-      ],
-      "publisher": "Hachette UK"
-    },
-    {
-      "menuID": 3,
-      "title": "College Cooking",
-      "author": [
-        "Megan Carle",
-        "Jill Carle"
-      ],
-      "publisher": "Ten Speed Press"
-    },
-    {
-      "menuID": 2,
-      "title": "When I Feel Sad",
-      "author": [
-        "Cornelia Maude Spelman",
-        "Kathy Parkinson"
-      ],
-      "publisher": "Albert Whitman & Company"
-    },
-    {
-      "menuID": 5,
-      "title": "This Is Water",
-      "author": [
-        "David Foster Wallace"
-      ],
-      "publisher": "Hachette UK"
-    },
-    {
-      "menuID": 2,
-      "title": "The Book of Book Lists",
-      "author": [
-        "JOHNSON"
+        "United States. Congress. Senate. Committee on Education and Labor"
       ]
-    },
-    {
-      "menuID": 2,
-      "title": "The Book of Book Lists",
-      "author": [
-        "JOHNSON"
-      ]
-    },
-    {
-      "menuID": 3,
-      "title": "Empire of Sand",
-      "author": [
-        "Tasha Suri"
-      ],
-      "publisher": "Hachette UK"
-    },
-    {
-      "menuID": 2,
-      "title": "The Red Books of Humphry Repton: Explanatory volume",
-      "author": [
-        "Humphry Repton"
-      ]
-    },
-    {
-      "menuID": 3,
-      "title": "Accidental Superstar",
-      "author": [
-        "Marianne Levy"
-      ],
-      "publisher": "Pan Macmillan"
-    },
-    {
-      "menuID": 3,
-      "title": "Liber Novus",
-      "author": [
-        "C. G. Jung"
-      ],
-      "publisher": "W. W. Norton & Company"
     }
   ]
 }

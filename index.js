@@ -7,13 +7,7 @@ const prompt = require('prompt-sync')();
 const fs = require('fs');
 const {config} = require('./config')
 
-const boxenOptions = {
-  padding: 1,
-  margin: 1,
-  borderStyle: 'round',
-  borderColor: 'green',
-  backgroundColor: '#555555',
-};
+const boxenOptions = config.boxenOptions;
 
 const greeting = chalk.white.bold(
   "Welcome to 8th Light's Google Books CLI API"
@@ -124,7 +118,7 @@ function searchMenu(bookArray) {
 }
 
 function saveToReadingList(chosenBook) {
-  let readingListJSON = readFromReadingListJSONFile();
+  let readingListJSON = readFromReadingListJSONFile(config.readingListFile);
 
   readingListJSON.readingList.push(chosenBook);
 
@@ -149,6 +143,7 @@ function getReadingList() {
   console.log(chalk.red.bold.inverse(`\nYour reading list: `));
 
   displayReadingList.readingList.forEach((item) => {
+    
     console.log(
       chalk.red.bold(` \n Title:`) +
         chalk.white(` ${item.title} `) +
@@ -190,6 +185,7 @@ function getBookDetails(search) {
   //seprate function axios
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&printType=books&startIndex=0&maxResults=5&projection=lite`;
 
+  // const url = `config.googleBooksURL`;
   const searchResult = axios
     .get(url)
     .then((response) => {
