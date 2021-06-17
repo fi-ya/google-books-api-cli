@@ -33,28 +33,6 @@ function welcomeMessage() {
   );
 }
 
-// const boxenOptions = config.boxenOptions;
-
-// const greeting = chalk.white.bold(
-//   "Welcome to 8th Light's Google Books CLI API"
-// );
-
-// const msgBox = boxen(greeting, boxenOptions);
-// console.log(msgBox);
-
-// console.log(
-//   chalk.bold.inverse.cyanBright(`Hello!`) +
-//     chalk.cyan(
-//       `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
-//     ) +
-//     chalk.cyan(
-//       `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
-//     ) +
-//     chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
-// );
-
-// mainMenu();
-
 function mainMenu() {
   console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
 
@@ -107,7 +85,6 @@ function exitProgram() {
 }
 
 function searchMenu(bookArray) {
-
   console.log(chalk.greenBright.inverse.bold('Search Menu\n'));
 
   console.log(
@@ -156,8 +133,6 @@ function chooseBookToSave(bookArray) {
   }
 }
 
-
-
 function saveToReadingList(chosenBook) {
   let readingListJSON = readFromReadingListJSONFile(config.readingListFile);
 
@@ -167,6 +142,9 @@ function saveToReadingList(chosenBook) {
   fs.writeFile(config.readingListFile, data, finished);
 
   function finished(err) {
+    if (err) {
+      return console.log(err);
+    }
     console.log('\nSaved to reading list!');
     getReadingList();
   }
@@ -217,7 +195,6 @@ function readingListMenu() {
 }
 
 function getBookDetails(search) {
-  //seprate function axios
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&printType=books&startIndex=0&maxResults=5&projection=lite`;
 
   // const url = `config.googleBooksURL`;
@@ -225,50 +202,57 @@ function getBookDetails(search) {
     .get(url)
     .then((response) => {
       let searchArray = response.data.items;
-
-      var bookArray = [];
-
-      // separate funtion dataMapper (bookDetailsMapper)
-      for (let i = 0; i < searchArray.length; i++) {
-        var bookObj = searchArray[i].volumeInfo;
-
-        var book = {
-          menuID: i + 1,
-          title: bookObj.title,
-          author: bookObj.authors,
-          publisher: bookObj.publisher,
-        };
-
-        bookArray.push(book);
-
-        // function view books/data
-        console.log(
-          chalk.white.bold(`\n Book Number:`) +
-            chalk.cyan.bold(` ${[book.menuID]}`) +
-            chalk.red.bold(` Title:`) +
-            chalk.white(` ${book.title} `) +
-            chalk.red.bold(` Author(s):`) +
-            chalk.white(` ${book.author} `) +
-            chalk.red.bold(` Publisher: `) +
-            chalk.white(` ${book.publisher} \n`)
-        );
-      }
-      searchMenu(bookArray);
+      bookDetailsMapper(searchArray);
     })
     .catch((error) => {
       console.error(`error: ${error}`);
     });
 }
 
+function bookDetailsMapper(searchArray) {
+  var bookArray = [];
+
+  for (let i = 0; i < searchArray.length; i++) {
+    var bookObj = searchArray[i].volumeInfo;
+
+    var book = {
+      menuID: i + 1,
+      title: bookObj.title,
+      author: bookObj.authors,
+      publisher: bookObj.publisher,
+    };
+
+    bookArray.push(book);
+    viewBookData(book);
+  }
+  searchMenu(bookArray);
+}
+
+function viewBookData(book) {
+  console.log(
+    chalk.white.bold(`\n Book Number:`) +
+      chalk.cyan.bold(` ${[book.menuID]}`) +
+      chalk.red.bold(` Title:`) +
+      chalk.white(` ${book.title} `) +
+      chalk.red.bold(` Author(s):`) +
+      chalk.white(` ${book.author} `) +
+      chalk.red.bold(` Publisher: `) +
+      chalk.white(` ${book.publisher} \n`)
+  );
+}
+
 module.exports = {
+  welcomeMessage,
   mainMenu,
+  searchForBookMainMenuOption,
+  getReadingList,
+  exitProgram,
   searchMenu,
+  getBookDetails,
+  chooseBookToSave,
   saveToReadingList,
   readFromReadingListJSONFile,
-  getReadingList,
   readingListMenu,
-  getBookDetails,
-  exitProgram,
-  searchForBookMainMenuOption,
-  chooseBookToSave,
+  viewBookData,
+  bookDetailsMapper,
 };

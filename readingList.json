@@ -70,6 +70,29 @@
         "Jenny Parks"
       ],
       "publisher": "Chronicle Books"
+    },
+    {
+      "menuID": 4,
+      "title": "Don't You Feel Well, Sam?",
+      "author": [
+        "Amy Hest"
+      ],
+      "publisher": "Candlewick Press"
+    },
+    {
+      "menuID": 3,
+      "title": "Coding For Dummies",
+      "author": [
+        "Nikhil Abraham"
+      ],
+      "publisher": "John Wiley & Sons"
+    },
+    {
+      "menuID": 2,
+      "title": "Eloquent JavaScript",
+      "author": [
+        "Marijn Haverbeke"
+      ]
     }
   ]
 }
