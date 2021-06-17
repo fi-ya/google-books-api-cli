@@ -5,31 +5,56 @@ const boxen = require('boxen');
 const axios = require('axios');
 const prompt = require('prompt-sync')();
 const fs = require('fs');
-const { config } = require('./config')
+const { config } = require('./config');
 // const { mainMenu } = require('./src/mainMenu');
 // const { searchMenu } = require('./src/searchMenu');
 
-const boxenOptions = config.boxenOptions;
-
-const greeting = chalk.white.bold(
-  "Welcome to 8th Light's Google Books CLI API"
-);
-
-const msgBox = boxen(greeting, boxenOptions);
-console.log(msgBox);
-
-console.log(
-  chalk.bold.inverse.cyanBright(`Hello!`) +
-    chalk.cyan(
-      `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
-    ) +
-    chalk.cyan(
-      `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
-    ) +
-    chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
-);
-
+welcomeMessage();
 mainMenu();
+
+function welcomeMessage() {
+
+  const greeting = chalk.white.bold(
+    "Welcome to 8th Light's Google Books CLI API"
+  );
+
+  const msgBox = boxen(greeting, config.boxenOptions);
+
+  console.log(msgBox);
+
+  console.log(
+    chalk.bold.inverse.cyanBright(`Hello!`) +
+      chalk.cyan(
+        `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
+      ) +
+      chalk.cyan(
+        `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
+      ) +
+      chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
+  );
+}
+
+// const boxenOptions = config.boxenOptions;
+
+// const greeting = chalk.white.bold(
+//   "Welcome to 8th Light's Google Books CLI API"
+// );
+
+// const msgBox = boxen(greeting, boxenOptions);
+// console.log(msgBox);
+
+// console.log(
+//   chalk.bold.inverse.cyanBright(`Hello!`) +
+//     chalk.cyan(
+//       `\nWelcome to my command line application that allows you to use the Google Books API to search for books and construct a reading list.`
+//     ) +
+//     chalk.cyan(
+//       `\nUse your keyboard to enter the number of the option you would like from the menu shown below.`
+//     ) +
+//     chalk.cyan.bold(`\nHave fun finding interesting new things to explore! `)
+// );
+
+// mainMenu();
 
 function mainMenu() {
   console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
@@ -41,30 +66,26 @@ function mainMenu() {
   const menu = prompt();
 
   if (`${menu}` == 1) {
-     console.log(chalk.white('\nWhat book would you like to search for? '));
-     let search = prompt();
+    console.log(chalk.white('\nWhat book would you like to search for? '));
+    let search = prompt();
 
-      if (`${search}` === "") {
-          console.log(
-            chalk.red('\nNothing selected. Please enter the book or phrase you would like to search.  ')
-          );
-        console.log(chalk.white('\nWhat book would you like to search for? '));
-         search = prompt();
-      }
+    if (`${search}` === '') {
+      console.log(
+        chalk.red(
+          '\nNothing selected. Please enter the book or phrase you would like to search.  '
+        )
+      );
+      console.log(chalk.white('\nWhat book would you like to search for? '));
+      search = prompt();
+    }
 
     console.log(chalk.cyan.inverse(`\nBooks about '${search}': `));
     getBookDetails(search);
-
   } else if (`${menu}` == 2) {
-    
     getReadingList();
-
   } else if (`${menu}` == 3) {
-
-    exitProgram ()
-
+    exitProgram();
   } else {
-
     console.log(
       chalk.red.bold(`\nOption not available. Please try again!
           `)
@@ -73,17 +94,12 @@ function mainMenu() {
   }
 }
 
-
 function exitProgram() {
-
-const exitGreeting = chalk.white.bold(`Have a great day. Goodbye! 😊 `);
-const msgBox2 = boxen(exitGreeting, boxenOptions);
-console.log(msgBox2);
-process.exit(1);
-
+  const exitGreeting = chalk.white.bold(`Have a great day. Goodbye! 😊 `);
+  const msgBox2 = boxen(exitGreeting, config.boxenOptions);
+  console.log(msgBox2);
+  process.exit(1);
 }
-
-
 
 function searchMenu(bookArray) {
   console.log(chalk.greenBright.inverse.bold('Search Menu\n'));
@@ -120,12 +136,11 @@ function searchMenu(bookArray) {
   } else if (`${searchMenu}` == 2) {
     mainMenu();
   } else {
-      console.log(
-          chalk.red.bold(`Option not available. Please try again!\n
+    console.log(
+      chalk.red.bold(`Option not available. Please try again!\n
           `)
-      );
+    );
     mainMenu();
-
   }
 }
 
@@ -149,13 +164,11 @@ function readFromReadingListJSONFile(readingList) {
 }
 
 function getReadingList() {
-
   let displayReadingList = readFromReadingListJSONFile(config.readingListFile);
 
   console.log(chalk.red.bold.inverse(`\nYour reading list: `));
 
   displayReadingList.readingList.forEach((item) => {
-
     console.log(
       chalk.red.bold(` \n Title:`) +
         chalk.white(` ${item.title} `) +
@@ -190,7 +203,6 @@ function readingListMenu() {
 }
 
 function getBookDetails(search) {
-
   //seprate function axios
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&printType=books&startIndex=0&maxResults=5&projection=lite`;
 
