@@ -2,9 +2,9 @@
   "name": "google-books-api-cli",
   "version": "1.0.0",
   "description": "8th Light Technical Assessment.A command line application that allows you to use the Google Books API to search for books and construct a reading list.",
-  "main": "bin/index.js",
+  "main": "index.js",
   "bin": {
-    "google-books-cli": "./bin/index.js"
+    "google-books-cli": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +24,7 @@
     "axios": "^0.21.1",
     "boxen": "^5.0.1",
     "chalk": "^4.1.1",
-    "prompt-sync": "^4.2.0",
-    "yargs": "^17.0.1"
+    "prompt-sync": "^4.2.0"
   }
 }
+ c

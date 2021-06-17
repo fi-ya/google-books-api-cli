@@ -5,6 +5,7 @@ const boxen = require('boxen');
 const axios = require('axios');
 const prompt = require('prompt-sync')();
 const fs = require('fs');
+const {config} = require('./config')
 
 const boxenOptions = {
   padding: 1,
@@ -42,9 +43,6 @@ function mainMenu() {
     )
   );
   const menu = prompt();
-  // console.log(
-  //   chalk.white(`\nYou have selected option:  `) + chalk.red(`${menu} `)
-  // );
 
   if (`${menu}` == 1) {
      console.log(chalk.white('\nWhat book would you like to search for? '));
@@ -60,14 +58,19 @@ function mainMenu() {
 
     console.log(chalk.cyan.inverse(`\nBooks about '${search}': `));
     getBookDetails(search);
+
   } else if (`${menu}` == 2) {
     getReadingList();
+
   } else if (`${menu}` == 3) {
+
     const exitGreeting = chalk.white.bold(`Have a great day. Goodbye! 😊 `);
     const msgBox2 = boxen(exitGreeting, boxenOptions);
     console.log(msgBox2);
     process.exit(1);
+
   } else {
+
     console.log(
       chalk.red.bold(`\nOption not available. Please try again!
           `)
@@ -84,31 +87,26 @@ function searchMenu(bookArray) {
     )
   );
   const searchMenu = prompt();
-  // console.log(
-  //   chalk.white(`\nYou have selected option  `) + chalk.red(`${searchMenu}`)
-  // );
 
   if (`${searchMenu}` == 1) {
+    /// function goToMainMenu
     console.log(
       chalk.white(
         '\nInsert the book number you would like to save to your reading list? '
       )
     );
-      let chosenBookId = prompt();
+    let chosenBookId = prompt();
 
-      if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
-
-        let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
-        console.log(
-          chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
-        );
-        if (chosenBook) saveToReadingList(chosenBook);
-
-      } else {
-
+    if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
+      let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
       console.log(
-        chalk.red
-          .bold(`\nBook number not available. Try again!
+        chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
+      );
+      if (chosenBook) saveToReadingList(chosenBook);
+    } else {
+      /// function goToMainMenu
+      console.log(
+        chalk.red.bold(`\nBook number not available. Try again!
           `)
       );
       mainMenu();
@@ -129,8 +127,9 @@ function saveToReadingList(chosenBook) {
   let readingListJSON = readFromReadingListJSONFile();
 
   readingListJSON.readingList.push(chosenBook);
+
   let data = JSON.stringify(readingListJSON, null, 2);
-  fs.writeFile('readingList.json', data, finished);
+  fs.writeFile(config.readingListFile, data, finished);
 
   function finished(err) {
     console.log('\nSaved to reading list!');
@@ -138,15 +137,18 @@ function saveToReadingList(chosenBook) {
   }
 }
 
-function readFromReadingListJSONFile() {
-  const file = fs.readFileSync('readingList.json');
+function readFromReadingListJSONFile(readingList) {
+  const file = fs.readFileSync(readingList);
   return JSON.parse(file);
 }
 
 function getReadingList() {
-  let display = readFromReadingListJSONFile();
+
+  let displayReadingList = readFromReadingListJSONFile(config.readingListFile);
+
   console.log(chalk.red.bold.inverse(`\nYour reading list: `));
-  display.readingList.forEach((item) => {
+
+  displayReadingList.readingList.forEach((item) => {
     console.log(
       chalk.red.bold(` \n Title:`) +
         chalk.white(` ${item.title} `) +
@@ -166,10 +168,6 @@ function readingListMenu() {
     chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
   );
   const readingListMenu = prompt();
-  // console.log(
-  //   chalk.white(`\nYou have selected option  `) +
-  //     chalk.red(`${readingListMenu} `)
-  // );
 
   if (`${readingListMenu}` == 1) {
     mainMenu();
@@ -188,6 +186,8 @@ function readingListMenu() {
 }
 
 function getBookDetails(search) {
+
+  //seprate function axios
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&printType=books&startIndex=0&maxResults=5&projection=lite`;
 
   const searchResult = axios
@@ -197,6 +197,7 @@ function getBookDetails(search) {
 
       var bookArray = [];
 
+      // separate funtion dataMapper (bookDetailsMapper)
       for (let i = 0; i < searchArray.length; i++) {
         var bookObj = searchArray[i].volumeInfo;
 
@@ -209,6 +210,7 @@ function getBookDetails(search) {
 
         bookArray.push(book);
 
+        // function view books/data
         console.log(
           chalk.white.bold(`\n Book Number:`) +
             chalk.cyan.bold(` ${[book.menuID]}`) +
