@@ -118,6 +118,22 @@
       "author": [
         "Humphry Repton"
       ]
+    },
+    {
+      "menuID": 3,
+      "title": "Accidental Superstar",
+      "author": [
+        "Marianne Levy"
+      ],
+      "publisher": "Pan Macmillan"
+    },
+    {
+      "menuID": 3,
+      "title": "Liber Novus",
+      "author": [
+        "C. G. Jung"
+      ],
+      "publisher": "W. W. Norton & Company"
     }
   ]
 }
