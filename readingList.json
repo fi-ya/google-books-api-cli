@@ -1,22 +1,5 @@
 {
   "readingList": [
-    {
-      "menuID": 1,
-      "title": "Lists and Indexes",
-      "author": [
-        "Great Britain. Public Record Office"
-      ]
-    },
-    {
-      "menuID": 2,
-      "title": "The Bee Book",
-      "author": [
-        "Fergus Chadwick",
-        "Bill Fitzmaurice",
-        "Steve Alton",
-        "Judy Earl"
-      ],
-      "publisher": "Dorling Kindersley Ltd"
-    }
+   
   ]
 }
