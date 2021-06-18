@@ -65,6 +65,9 @@ I came unstuck with this error when i tried to return back to the mainMenu when 
 After triple checking that my imports and exports were correct, i couldn't understand why as other function calls were processing (ie exitProgram). After some research, i realised that it was due to circular dependency.
 I tried to solve this by forward declaring the exports object before requiring any other modules, to no success.Then i tried to require mainMenu inside of searchMenu and readingListMenu functions and this worked. I am sure that this is a hack fix and there is another more sophisticated way of resolving this issue given more time.
 
+It seems this error persists and can be seen when the google books API results are displayed as seen here. This error appear after refactoring the code from index.js file ![Screenshot 2021-06-18 at 23 33 02](https://user-images.githubusercontent.com/69358550/122621469-8da06f80-d08d-11eb-9d4d-eb153ccc12a3.png)
+
+
 This is the [resource](https://stackoverflow.com/questions/10869276/how-to-deal-with-cyclic-dependencies-in-node-js) that helped me with this issue.
 # Footer
 [(Back to top)](#table-of-contents)
