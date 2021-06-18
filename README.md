@@ -13,7 +13,7 @@ A command line application that allows you to use the Google Books API to search
 - [Installation](#installation)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
-- [License](#license)
+- [Issues to resolve](#issues-to-resolve)
 - [Footer](#footer)
 
 # Installation
@@ -36,9 +36,19 @@ To use this project, first clone the repo on your device using the command below
 [(Back to top)](#table-of-contents)
 
 
-# License
+# Issues to resolve
 [(Back to top)](#table-of-contents)
 
+***Circular Dependency***
+
+I came unstuck with this error when i tried to return back to the mainMenu when on the readingListMenu or searchMenu.
+
+![typeError-reading-list-menu](https://user-images.githubusercontent.com/69358550/122571047-39bd6880-d044-11eb-877b-bec2ff9e2750.jpg)
+
+After triple checking that my imports and exports were correct, i couldn't understand why as other function calls were processing (ie exitProgram). After some research, i realised that it was due to circular dependency.
+I tried to solve this by forward declaring the exports object before requiring any other modules, to no success.Then i tried to require mainMenu inside of searchMenu and readingListMenu functions and this worked. I am sure that this is a hack fix and there is another more sophisticated way of resolving this issue given more time.
+
+This is the [resource](https://stackoverflow.com/questions/10869276/how-to-deal-with-cyclic-dependencies-in-node-js) that helped me with this issue.
 # Footer
 [(Back to top)](#table-of-contents)
 

@@ -3,11 +3,10 @@ const prompt = require('prompt-sync')();
 const {
   searchForBookMainMenuOption,
 } = require('../utils/searchForBookMainMenuOption');
-const { getReadingList } = require('../utils/getReadingList');
 const { exitProgram } = require('../utils/exitProgram');
+const { getReadingList } = require('../utils/getReadingList');
 
 function mainMenu() {
-
   console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
 
   console.log(
@@ -33,4 +32,4 @@ function mainMenu() {
   }
 }
 
-module.exports = { mainMenu };
+module.exports = { mainMenu } ;

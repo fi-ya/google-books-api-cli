@@ -1,9 +1,11 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { exitProgram } = require('../utils/exitProgram');
-const { mainMenu } = require('./mainMenu');
+//const { mainMenu } = require('./mainMenu');
+
 
 function readingListMenu() {
+const { mainMenu } = require('./mainMenu');
   console.log(chalk.greenBright.inverse.bold('\nReading List Menu\n'));
   console.log(
     chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
@@ -11,6 +13,7 @@ function readingListMenu() {
   const readingListMenu = prompt();
 
   if (`${readingListMenu}` == 1) {
+
     mainMenu();
   } else if (`${readingListMenu}` == 2) {
     exitProgram();
@@ -23,4 +26,4 @@ function readingListMenu() {
 
   }
 }
-module.exports = { readingListMenu };
+ module.exports = { readingListMenu };

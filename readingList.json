@@ -86,6 +86,22 @@
         "Kiran Millwood Hargrave"
       ],
       "publisher": "Chicken House"
+    },
+    {
+      "menuID": 3,
+      "title": "My Very First Space Book",
+      "author": [
+        "Emily Bone"
+      ]
+    },
+    {
+      "menuID": 1,
+      "title": "The Face-to-Face Book",
+      "author": [
+        "Ed Keller",
+        "Brad Fay"
+      ],
+      "publisher": "Simon and Schuster"
     }
   ]
 }

@@ -1,9 +1,10 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { chooseBookToSave } = require('../utils/chooseBookToSave');
-const { mainMenu } = require('./mainMenu');
+//const { mainMenu } = require('./mainMenu');
 
 function searchMenu(bookArray) {
+  const { mainMenu } = require('./mainMenu');
   console.log(chalk.greenBright.inverse.bold('Search Menu\n'));
 
   console.log(
