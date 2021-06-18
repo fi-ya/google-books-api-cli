@@ -2,106 +2,10 @@
   "readingList": [
     {
       "menuID": 1,
-      "title": "Disney The Lion King: Roar of the Pride Lands",
+      "title": "Lists and Indexes",
       "author": [
-        "Maggie Fischer"
-      ],
-      "publisher": "SFI Readerlink Dist"
-    },
-    {
-      "menuID": 2,
-      "title": "Snow White",
-      "author": [
-        "Brothers Grimm"
-      ],
-      "publisher": "Harper Design"
-    },
-    {
-      "menuID": 1,
-      "title": "The Book of Pears",
-      "author": [
-        "Joan Morgan"
-      ],
-      "publisher": "Chelsea Green Publishing"
-    },
-    {
-      "menuID": 1,
-      "title": "Violations of Free Speech and Rights of Labor",
-      "author": [
-        "United States. Congress. Senate. Committee on Education and Labor"
+        "Great Britain. Public Record Office"
       ]
-    },
-    {
-      "menuID": 2,
-      "title": "The Cruel Sea",
-      "author": [
-        "Nicholas Monsarrat"
-      ],
-      "publisher": "Burford Books"
-    },
-    {
-      "menuID": 2,
-      "title": "The Cruel Sea",
-      "author": [
-        "Nicholas Monsarrat"
-      ],
-      "publisher": "Burford Books"
-    },
-    {
-      "menuID": 1,
-      "title": "Peas & Queues",
-      "author": [
-        "Sandi Toksvig"
-      ],
-      "publisher": "Profile Books"
-    },
-    {
-      "menuID": 1,
-      "title": "There are Cats in this Book",
-      "author": [
-        "Viviane Schwarz"
-      ],
-      "publisher": "Walker"
-    },
-    {
-      "menuID": 3,
-      "title": "Star Trek Cats",
-      "author": [
-        "Jenny Parks"
-      ],
-      "publisher": "Chronicle Books"
-    },
-    {
-      "menuID": 4,
-      "title": "Don't You Feel Well, Sam?",
-      "author": [
-        "Amy Hest"
-      ],
-      "publisher": "Candlewick Press"
-    },
-    {
-      "menuID": 5,
-      "title": "The Girl of Ink & Stars",
-      "author": [
-        "Kiran Millwood Hargrave"
-      ],
-      "publisher": "Chicken House"
-    },
-    {
-      "menuID": 3,
-      "title": "My Very First Space Book",
-      "author": [
-        "Emily Bone"
-      ]
-    },
-    {
-      "menuID": 1,
-      "title": "The Face-to-Face Book",
-      "author": [
-        "Ed Keller",
-        "Brad Fay"
-      ],
-      "publisher": "Simon and Schuster"
     }
   ]
 }
