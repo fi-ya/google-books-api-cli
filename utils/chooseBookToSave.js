@@ -1,29 +1,23 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { saveToReadingList } = require('./saveToReadingList');
+const {errorMessageIncorrectBookNumber} = require('./errorMessages')
+const { enterBookNumber, savingBookNumber } = require('./terminalMessages')
 
 function chooseBookToSave(bookArray) {
 
-  console.log(
-    chalk.white(
-      '\nInsert the book number you would like to save to your reading list? '
-    )
-  );
+  enterBookNumber();
   let chosenBookId = prompt();
 
   if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
     let chosenBook = bookArray.find((x) => x.menuID == `${chosenBookId}`);
 
-    console.log(
-      chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
-    );
+    savingBookNumber(chosenBookId);
 
     if (chosenBook) saveToReadingList(chosenBook);
   } else {
-    console.log(
-      chalk.red.bold(`\nBook number not available. Try again!
-          `)
-    );
+
+    errorMessageIncorrectBookNumber();
     chooseBookToSave(bookArray)
 
   }

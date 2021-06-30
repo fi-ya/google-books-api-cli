@@ -14,9 +14,14 @@ function errorMessageIncorrectMenuOption() {
       chalk.red.bold(`\nInvalid input. Please choose a number from the menu.
         `)
     );
+}
 
+function errorMessageIncorrectBookNumber() {
+    return console.log(
+      chalk.red.bold(`\nInvalid input. Please choose from book number 1 to 5.
+          `)
+    );
 }
 
 
-
-module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption }
+module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption, errorMessageIncorrectBookNumber }

@@ -33,6 +33,20 @@ function searchingBookName(search) {
     return console.log(chalk.cyan.inverse(`\nSearching for books about '${search}': `));
 }
 
+function enterBookNumber() {
+    return console.log(
+    chalk.white(
+      '\nInsert the book number you would like to save to your reading list? '
+    )
+  );
+}
+
+function savingBookNumber(chosenBookId) {
+    return console.log(
+      chalk.white(`\nSaving book number `) + chalk.red(`${chosenBookId}`)
+    );
+}
+
 function viewBookData(book) {
   console.log(
     chalk.white.bold(`\n Book Number:`) +
@@ -46,6 +60,4 @@ function viewBookData(book) {
   );
 }
 
-
-
-module.exports = { displayMainMenu, displayReadingListMenu, displaySearchMenu, enterBookName, searchingBookName , viewBookData }
+module.exports = { displayMainMenu, displayReadingListMenu, displaySearchMenu, enterBookName, searchingBookName ,enterBookNumber, savingBookNumber, viewBookData }

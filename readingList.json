@@ -1,77 +1,18 @@
 {
   "readingList": [
     {
-      "menuID": 4,
-      "title": "Car",
+      "menuID": 1,
+      "title": "Breaking Dad",
       "author": [
-        "DK"
+        "James Lubbock"
       ],
-      "publisher": "Penguin"
-    },
-    {
-      "menuID": 5,
-      "title": "Clean Code",
-      "author": [
-        "Robert C. Martin"
-      ],
-      "publisher": "Pearson Education"
-    },
-    {
-      "menuID": 4,
-      "title": "My First Computer Coding Book Using Scratch Jr",
-      "author": [
-        "Rosie DICKINS"
-      ]
-    },
-    {
-      "menuID": 2,
-      "title": "The Audio Programming Book",
-      "author": [
-        "Richard Charles Boulanger",
-        "Victor Lazzarini"
-      ],
-      "publisher": "Mit Press"
+      "publisher": "Information Not Available"
     },
     {
       "menuID": 1,
-      "title": "Haskell Programming from First Principles",
-      "author": [
-        "Christopher Allen",
-        "Julie Moronuki"
-      ],
-      "publisher": "Information not available"
-    },
-    {
-      "menuID": 2,
-      "title": "Race Cars",
-      "author": [
-        "Jenny Devenny"
-      ],
-      "publisher": "Frances Lincoln Limited"
-    },
-    {
-      "menuID": 2,
-      "title": "The Impossible Collection of Cars",
-      "author": [
-        "Dan Neil"
-      ],
-      "publisher": "Ultimate"
-    },
-    {
-      "menuID": 1,
-      "title": "The Impossible Collection of Cars",
-      "author": [
-        "Dan Neil"
-      ],
-      "publisher": "Ultimate"
-    },
-    {
-      "menuID": 1,
-      "title": "Coding All-in-One For Dummies",
-      "author": [
-        "Nikhil Abraham"
-      ],
-      "publisher": "John Wiley & Sons"
+      "title": "The World Book Encyclopedia",
+      "author": "Information Not Available",
+      "publisher": "Information Not Available"
     }
   ]
 }
