@@ -1,23 +1,21 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { getBookDetails } = require('./getBookDetails');
-const { consoleLogEnterBookName , consoleLogSearchingBookName } = require('./consoleLogMessages');
-const { consoleLogErrorIncorrectBookName } = require('./errorMessages');
+const { enterBookName , searchingBookName } = require('./terminalMessages');
+const { errorMessageIncorrectBookName } = require('./errorMessages');
 
 function searchForBookMainMenuOption() {
 
-  consoleLogEnterBookName()
-  let search = prompt();
+  enterBookName()
+  const search = prompt().trim();
 
-  if (search.match(/^\s*$/)){
-
-    consoleLogErrorIncorrectBookName();
+  if (search === '') {
+    errorMessageIncorrectBookName();
     searchForBookMainMenuOption();
-    
+    return;
   }
 
-  consoleLogSearchingBookName(search);
-
+  searchingBookName(search);
   getBookDetails(search);
 }
 

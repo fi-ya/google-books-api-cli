@@ -1,4 +1,4 @@
-const { viewBookData } = require('./consoleLogMessages');
+const { viewBookData } = require('./terminalMessages');
 const { searchMenu } = require('../src/searchMenu');
 
 function bookDetailsMapper(searchArray) {

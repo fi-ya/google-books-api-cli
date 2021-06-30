@@ -85,11 +85,30 @@ I had used an if/else statement to handle any incorrect inputs in `chooseBookToS
 ***User enters only whitespace when searching for a book***
 
 I had used an if statement in `searchForBookMainMenuOption` to catch an empty string input and subsequently display an error message. However i did not account for whitespace.
-Therefore to solve this edge case, I used regex [match method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) to check for whitespace.
+Therefore to solve this edge case, I used [trim method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) to remove whitespace from both ends of the `search` string. I refactored the code by separating the console log messages into their own files, `terminalMessages`, `errorMessages`. Then i ended the if statement by recursively calling `searchForBookMainMenuOption()`.
+
+Initial:
 ```javascript
-if (search.match(/^\s*$/)){
-    consoleLogErrorIncorrectBookName();
+let search = prompt();
+
+  if (`${search}` === '') {
+    console.log(
+      chalk.red(
+        '\nNothing selected. Please enter the book or phrase you would like to search.  '
+      )
+    );
+    console.log(chalk.white('\nWhat book would you like to search for? '));
+    search = prompt();
+  }
+```
+Solution:
+```javascript
+const search = prompt().trim();
+
+  if (search === '') {
+    errorMessageIncorrectBookName();
     searchForBookMainMenuOption();
+    return;
   }
 ```
 
@@ -105,7 +124,8 @@ var book = {
       publisher: bookObj.publisher === undefined ? 'Information Not Available': bookObj.publisher,
     };
 ```
-The final result: ![Screenshot 2021-06-30 at 22 23 25](https://user-images.githubusercontent.com/69358550/124033648-1efad480-d9f2-11eb-93bd-be3c2eae1467.png)
+The final result:
+![Screenshot 2021-06-30 at 22 23 25](https://user-images.githubusercontent.com/69358550/124033648-1efad480-d9f2-11eb-93bd-be3c2eae1467.png)
 # Footer
 [(Back to top)](#table-of-contents)
 

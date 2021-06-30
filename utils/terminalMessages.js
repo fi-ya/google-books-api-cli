@@ -1,11 +1,11 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 
-function consoleLogEnterBookName() {
+function enterBookName() {
     return console.log(chalk.white('\nWhat book would you like to search for? '));
 }
 
-function consoleLogSearchingBookName(search) {
+function searchingBookName(search) {
     return console.log(chalk.cyan.inverse(`\nSearching for books about '${search}': `));
 }
 
@@ -24,4 +24,4 @@ function viewBookData(book) {
 
 
 
-module.exports = {consoleLogEnterBookName, consoleLogSearchingBookName , viewBookData }
+module.exports = {enterBookName, searchingBookName , viewBookData }
