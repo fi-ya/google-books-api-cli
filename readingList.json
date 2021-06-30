@@ -22,6 +22,24 @@
       "author": [
         "Rosie DICKINS"
       ]
+    },
+    {
+      "menuID": 2,
+      "title": "The Audio Programming Book",
+      "author": [
+        "Richard Charles Boulanger",
+        "Victor Lazzarini"
+      ],
+      "publisher": "Mit Press"
+    },
+    {
+      "menuID": 1,
+      "title": "Haskell Programming from First Principles",
+      "author": [
+        "Christopher Allen",
+        "Julie Moronuki"
+      ],
+      "publisher": "Information not available"
     }
   ]
 }

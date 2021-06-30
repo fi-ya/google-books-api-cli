@@ -11,7 +11,7 @@ function bookDetailsMapper(searchArray) {
       menuID: i + 1,
       title: bookObj.title,
       author: bookObj.authors,
-      publisher: bookObj.publisher,
+      publisher: bookObj.publisher === undefined ? 'Information Not Available': bookObj.publisher,
     };
 
     bookArray.push(book);
