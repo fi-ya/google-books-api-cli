@@ -1,9 +1,9 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { saveToReadingList } = require('./saveToReadingList');
-const { mainMenu } = require('../src/mainMenu');
 
 function chooseBookToSave(bookArray) {
+  
   console.log(
     chalk.white(
       '\nInsert the book number you would like to save to your reading list? '
@@ -24,7 +24,8 @@ function chooseBookToSave(bookArray) {
       chalk.red.bold(`\nBook number not available. Try again!
           `)
     );
-    mainMenu();
+    chooseBookToSave(bookArray)
+
   }
 }
 

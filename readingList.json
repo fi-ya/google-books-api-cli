@@ -1,5 +1,27 @@
 {
   "readingList": [
-   
+    {
+      "menuID": 4,
+      "title": "Car",
+      "author": [
+        "DK"
+      ],
+      "publisher": "Penguin"
+    },
+    {
+      "menuID": 5,
+      "title": "Clean Code",
+      "author": [
+        "Robert C. Martin"
+      ],
+      "publisher": "Pearson Education"
+    },
+    {
+      "menuID": 4,
+      "title": "My First Computer Coding Book Using Scratch Jr",
+      "author": [
+        "Rosie DICKINS"
+      ]
+    }
   ]
 }
