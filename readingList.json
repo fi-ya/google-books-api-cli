@@ -40,6 +40,22 @@
         "Julie Moronuki"
       ],
       "publisher": "Information not available"
+    },
+    {
+      "menuID": 2,
+      "title": "Race Cars",
+      "author": [
+        "Jenny Devenny"
+      ],
+      "publisher": "Frances Lincoln Limited"
+    },
+    {
+      "menuID": 2,
+      "title": "The Impossible Collection of Cars",
+      "author": [
+        "Dan Neil"
+      ],
+      "publisher": "Ultimate"
     }
   ]
 }
