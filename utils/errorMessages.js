@@ -4,9 +4,19 @@ const prompt = require('prompt-sync')();
 function errorMessageIncorrectBookName() {
     return console.log(
      chalk.red(
-       '\nInput invalid. Please enter the book or phrase you would like to search.  '
+       '\nInvalid input. Please enter the book or phrase you would like to search.  '
       )
     );
 }
 
-module.exports = {errorMessageIncorrectBookName }
+function errorMessageIncorrectMenuOption() {
+    return console.log(
+      chalk.red.bold(`\nInvalid input. Please choose a number from the menu.
+        `)
+    );
+
+}
+
+
+
+module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption }

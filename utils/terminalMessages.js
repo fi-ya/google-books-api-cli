@@ -1,5 +1,29 @@
 const chalk = require('chalk');
-const prompt = require('prompt-sync')();
+
+function displayMainMenu() {
+  return console.log(
+    chalk.greenBright.inverse.bold('\nMain Menu\n') +
+    chalk.white(
+      'Select an option: \n 1: Search for Books \n 2: View Reading List \n 3: Exit\n'
+    )
+  );
+}
+
+function displayReadingListMenu() {
+return console.log(
+    chalk.greenBright.inverse.bold('\nReading List Menu\n') +
+    chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
+  );
+}
+
+function displaySearchMenu() {
+return console.log(
+    chalk.greenBright.inverse.bold('Search Menu\n') +
+    chalk.white(
+      'Select an option: \n 1: Save book to reading list \n 2: Back to main menu\n '
+    )
+  );
+}
 
 function enterBookName() {
     return console.log(chalk.white('\nWhat book would you like to search for? '));
@@ -24,4 +48,4 @@ function viewBookData(book) {
 
 
 
-module.exports = {enterBookName, searchingBookName , viewBookData }
+module.exports = { displayMainMenu, displayReadingListMenu, displaySearchMenu, enterBookName, searchingBookName , viewBookData }

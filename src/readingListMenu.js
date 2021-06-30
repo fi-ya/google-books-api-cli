@@ -1,15 +1,14 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
 const { exitProgram } = require('../utils/exitProgram');
-//const { mainMenu } = require('./mainMenu');
+const { errorMessageIncorrectMenuOption } = require('../utils/errorMessages');
+const { displayReadingListMenu } = require('../utils/terminalMessages');
 
 
 function readingListMenu() {
-const { mainMenu } = require('./mainMenu');
-  console.log(chalk.greenBright.inverse.bold('\nReading List Menu\n'));
-  console.log(
-    chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
-  );
+  const { mainMenu } = require('./mainMenu');
+
+  displayReadingListMenu();
   const readingListMenu = prompt();
 
   if (`${readingListMenu}` == 1) {
@@ -18,12 +17,9 @@ const { mainMenu } = require('./mainMenu');
   } else if (`${readingListMenu}` == 2) {
     exitProgram();
   } else {
-    console.log(
-      chalk.red.bold(`\nOption not available. Please try again!
-          `)
-    );
+    errorMessageIncorrectMenuOption();
     mainMenu();
-
   }
 }
+
  module.exports = { readingListMenu };

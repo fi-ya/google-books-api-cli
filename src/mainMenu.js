@@ -5,15 +5,11 @@ const {
 } = require('../utils/searchForBookMainMenuOption');
 const { exitProgram } = require('../utils/exitProgram');
 const { getReadingList } = require('../utils/getReadingList');
+const { errorMessageIncorrectMenuOption } = require('../utils/errorMessages');
+const { displayMainMenu } = require('../utils/terminalMessages');
 
 function mainMenu() {
-  console.log(chalk.greenBright.inverse.bold('\nMain Menu\n'));
-
-  console.log(
-    chalk.white(
-      'Select an option: \n 1: Search for Books \n 2: View Reading List \n 3: Exit\n'
-    )
-  );
+  displayMainMenu();
 
   const menu = prompt();
 
@@ -24,10 +20,8 @@ function mainMenu() {
   } else if (`${menu}` == 3) {
     exitProgram();
   } else {
-    console.log(
-      chalk.red.bold(`\nOption not available. Please try again!
-          `)
-    );
+
+    errorMessageIncorrectMenuOption();
     mainMenu();
   }
 }
