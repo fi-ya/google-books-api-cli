@@ -13,10 +13,7 @@ function searchForBookMainMenuOption() {
 
     consoleLogErrorIncorrectBookName();
     searchForBookMainMenuOption();
-    // BookName()
-    // search = prompt();
-    // console.log(chalk.white('\nWhat book would you like to search for? '));
-    // search = prompt();
+    
   }
 
   consoleLogSearchingBookName(search);

@@ -3,7 +3,7 @@ const prompt = require('prompt-sync')();
 const { saveToReadingList } = require('./saveToReadingList');
 
 function chooseBookToSave(bookArray) {
-  
+
   console.log(
     chalk.white(
       '\nInsert the book number you would like to save to your reading list? '

@@ -1,4 +1,4 @@
-const { viewBookData } = require('./viewBookData');
+const { viewBookData } = require('./consoleLogMessages');
 const { searchMenu } = require('../src/searchMenu');
 
 function bookDetailsMapper(searchArray) {
@@ -9,8 +9,8 @@ function bookDetailsMapper(searchArray) {
 
     var book = {
       menuID: i + 1,
-      title: bookObj.title,
-      author: bookObj.authors,
+      title: bookObj.title === undefined ? 'Information Not Available': bookObj.title,
+      author: bookObj.authors === undefined ? 'Information Not Available': bookObj.authors,
       publisher: bookObj.publisher === undefined ? 'Information Not Available': bookObj.publisher,
     };
 
