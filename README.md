@@ -17,12 +17,14 @@ A command line application that allows you to use the Google Books API to search
 - [Acceptance Criteria](#acceptance-criteria)
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
+- [Testing](#testing)
 - [Usage](#usage)
     - [Search for book and save to reading list](#search-for-book-and-save-to-reading-list)
     - [View reading list and exit program](#view-reading-list-and-exit-program)
 - [Dependencies](#dependencies)
 - [Issues to resolve](#issues-to-resolve)
 - [Bug fixes](#bug-fixes)
+- [Further improvements](#further-improvements)
 - [Footer](#footer)
 
 # Installation
@@ -33,6 +35,13 @@ To use this project,
 - `cd` into google-books-api-cli folder
 - Run `npm install` to install dependencies
 - Run `node .` or `node index.js` to start CLI
+# Testing
+[(Back to top)](#table-of-contents)
+
+To run tests, make sure you're in the application directory, and start the tests with:
+```
+npm test
+```
 
 # Usage
 [(Back to top)](#table-of-contents)
@@ -126,6 +135,16 @@ var book = {
 ```
 The final result:
 ![Screenshot 2021-06-30 at 22 23 25](https://user-images.githubusercontent.com/69358550/124033648-1efad480-d9f2-11eb-93bd-be3c2eae1467.png)
+
+# Further improvements
+[(Back to top)](#table-of-contents)
+These are some suggestions on how the program could be further developed.
+
+- Searching by title and/or author
+- Delete books from the reading list.
+- Check to see if the book already exists in reading list before adding so there are no duplicates.
+- Add functionality which displays 5 books at a time.
+- User login functionality, useful if more than one user per machine.
 # Footer
 [(Back to top)](#table-of-contents)
 
