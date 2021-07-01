@@ -4,7 +4,13 @@ const fs = require('fs');
 jest.spyOn(fs, 'readFileSync');
 
 describe('readFromReadingListJSONFile', () => {
-    it('should return the expected file if it exists on disk as an object', () => {
+
+    test('readFromReadingListJSONFile function exists', () => {
+        expect(readFromReadingListJSONFile).toBeDefined;
+    });
+
+
+    test('should return the expected file if it exists on disk as an object', () => {
         fs.readFileSync.mockImplementation(() => 'abc');
         jest.clearAllMocks();
         const file = readFileFromDisk({

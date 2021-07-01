@@ -1,0 +1,7 @@
+{
+    "typeAcquisition": {  // allows VSCode to provide intellisense for Jest
+        "include": [
+            "jest"
+        ]
+    }
+}
