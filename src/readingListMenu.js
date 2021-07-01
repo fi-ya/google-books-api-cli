@@ -7,12 +7,10 @@ const { displayReadingListMenu } = require('../utils/terminalMessages');
 
 function readingListMenu() {
   const { mainMenu } = require('./mainMenu');
-
   displayReadingListMenu();
   const readingListMenu = prompt();
 
   if (`${readingListMenu}` == 1) {
-
     mainMenu();
   } else if (`${readingListMenu}` == 2) {
     exitProgram();

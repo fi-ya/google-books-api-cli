@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const prompt = require('prompt-sync')();
 
 function errorMessageIncorrectBookName() {
     return console.log(
@@ -22,6 +21,5 @@ function errorMessageIncorrectBookNumber() {
           `)
     );
 }
-
 
 module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption, errorMessageIncorrectBookNumber }

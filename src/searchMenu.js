@@ -6,7 +6,6 @@ const { displaySearchMenu } = require('../utils/terminalMessages');
 
 function searchMenu(bookArray) {
   const { mainMenu } = require('./mainMenu');
-  
   displaySearchMenu();
   const searchMenu = prompt();
 

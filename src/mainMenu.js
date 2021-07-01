@@ -10,7 +10,6 @@ const { displayMainMenu } = require('../utils/terminalMessages');
 
 function mainMenu() {
   displayMainMenu();
-
   const menu = prompt();
 
   if (`${menu}` == 1) {
@@ -20,7 +19,6 @@ function mainMenu() {
   } else if (`${menu}` == 3) {
     exitProgram();
   } else {
-
     errorMessageIncorrectMenuOption();
     mainMenu();
   }

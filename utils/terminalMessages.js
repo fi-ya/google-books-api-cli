@@ -60,4 +60,8 @@ function viewBookData(book) {
   );
 }
 
-module.exports = { displayMainMenu, displayReadingListMenu, displaySearchMenu, enterBookName, searchingBookName ,enterBookNumber, savingBookNumber, viewBookData }
+function exitGreeting() {
+  return chalk.white.bold(`Have a great day. Goodbye! 😊 `);
+}
+
+module.exports = { displayMainMenu, displayReadingListMenu, displaySearchMenu, enterBookName, searchingBookName ,enterBookNumber, savingBookNumber, viewBookData , exitGreeting}
