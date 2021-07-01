@@ -4,6 +4,7 @@ const {
   readFromReadingListJSONFile,
 } = require('./readFromReadingListJSONFile');
 const { getReadingList } = require('./getReadingList');
+const {displaySavedToReadingList} = require('./terminalMessages')
 
 function saveToReadingList(chosenBook) {
   let readingListJSON = readFromReadingListJSONFile(config.readingListFile);
@@ -17,7 +18,7 @@ function saveToReadingList(chosenBook) {
     if (err) {
       return console.log(err);
     }
-    console.log('\nSaved to reading list!');
+    displaySavedToReadingList();
     getReadingList();
   }
 }

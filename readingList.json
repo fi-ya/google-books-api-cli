@@ -13,6 +13,24 @@
       "title": "The World Book Encyclopedia",
       "author": "Information Not Available",
       "publisher": "Information Not Available"
+    },
+    {
+      "menuID": 1,
+      "title": "The Big Book of Football by Mundial",
+      "author": [
+        "Mundial"
+      ],
+      "publisher": "Wide Eyed Editions"
+    },
+    {
+      "menuID": 3,
+      "title": "The New York Times Book of Movies",
+      "author": [
+        "Wallace Schroeder",
+        "A. O. Scott",
+        "Manohla Dargis"
+      ],
+      "publisher": "Universe Publishing(NY)"
     }
   ]
 }

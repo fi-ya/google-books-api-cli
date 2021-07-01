@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 
 function errorMessageIncorrectBookName() {
-    return console.log(
+     console.log(
      chalk.red(
        '\nInvalid input. Please enter the book or phrase you would like to search.  '
       )
@@ -9,17 +9,21 @@ function errorMessageIncorrectBookName() {
 }
 
 function errorMessageIncorrectMenuOption() {
-    return console.log(
+     console.log(
       chalk.red.bold(`\nInvalid input. Please choose a number from the menu.
         `)
     );
 }
 
 function errorMessageIncorrectBookNumber() {
-    return console.log(
+     console.log(
       chalk.red.bold(`\nInvalid input. Please choose from book number 1 to 5.
           `)
     );
 }
 
-module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption, errorMessageIncorrectBookNumber }
+function catchErrorMessage(error) {
+  return console.error(chalk.red.bold(`error: ${error}`));
+}
+
+module.exports = {errorMessageIncorrectBookName, errorMessageIncorrectMenuOption, errorMessageIncorrectBookNumber, catchErrorMessage }

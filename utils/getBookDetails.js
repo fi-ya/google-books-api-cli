@@ -2,6 +2,7 @@ const chalk = require('chalk');
 const axios = require('axios');
 const { bookDetailsMapper } = require('./bookDetailsMapper');
 //const { config } = require('./config'); //DELETE IF NOT USING
+const { catchErrorMessage } = require('./errorMessages');
 
 function getBookDetails(search) {
   const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&printType=books&startIndex=0&maxResults=5&projection=lite`;
@@ -14,7 +15,7 @@ function getBookDetails(search) {
       bookDetailsMapper(searchArray);
     })
     .catch((error) => {
-      console.error(chalk.red.bold(`error: ${error}`));
+      catchErrorMessage(error);
     });
 }
 
