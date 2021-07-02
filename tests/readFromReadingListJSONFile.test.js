@@ -9,18 +9,16 @@ describe('readFromReadingListJSONFile', () => {
         expect(readFromReadingListJSONFile).toBeDefined();
     });
 
-
-    test('should return the expected file if it exists as an object',
+    test.todo('should return the expected file if it exists as an object',
         // () => {
-        //  fs.readFileSync.mockImplementation(() => 'abc');
+        // fs.readFileSync.mockImplementation(() => {
+        //         '{\"menuID\": 1, \"title\": \"Disney The Lion King: Roar of the Pride Lands\",\"author\": [\"Maggie Fischer\"],\"publisher\": \"SFI Readerlink Dist\"}'
+        //     });
 
-        // jest.clearAllMocks();
-
-        //     const file = readFromReadingListJSONFile('../fixtures/readingListTest.json');
-        //     // const result = JSON.parse(file)
-
-        // expect(result).toEqual('abc');
-        // expect(fs.readFileSync.mock.calls[0][0].toMatchObject('../fixtures/readingListTest.json'));
-        // }
+        // const file = readFromReadingListJSONFile('./fake/path');
+        //     expect(file).toEqual();
+        //     jest.clearAllMocks();
+        //expect(fs.readFileSync.mock.calls[0][0].toMatchObject('../fixtures/readingListTest.json'));
+        //}
     )
 });

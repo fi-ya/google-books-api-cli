@@ -9,18 +9,17 @@ describe('saveToReadingList', () => {
         expect(saveToReadingList).toBeDefined();
     })
 
-
-    test('writes to file using fs.writeFile', () => {
-        fs.writeFile.mockImplementation(() => 'abc');
-        const chosenBook = {
-          menuID: 1,
-          title: 'Coding For Dummies',
-          author: ['Nikhil Abraham'],
-          publisher: 'John Wiley & Sons',
-        };
-        const result = saveToReadingList('abc');
-        expect(result).toEqual('abc');
-    })
-
-
+    test.todo('writes to file using fs.writeFile',
+        // () => {
+        // fs.writeFile.mockImplementation(() => 'abc');
+        // const chosenBook = {
+        //   menuID: 1,
+        //   title: 'Coding For Dummies',
+        //   author: ['Nikhil Abraham'],
+        //   publisher: 'John Wiley & Sons',
+        // };
+        // const result = saveToReadingList('abc');
+        // expect(result).toEqual('abc');
+        // }
+    )
 })

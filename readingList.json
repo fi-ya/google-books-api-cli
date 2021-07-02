@@ -1,44 +1,5 @@
 {
   "readingList": [
-    {
-      "menuID": 1,
-      "title": "How to Bake",
-      "author": [
-        "Paul Hollywood"
-      ],
-      "publisher": "A&C Black"
-    },
-    {
-      "menuID": 1,
-      "title": "How to Bake",
-      "author": [
-        "Paul Hollywood"
-      ],
-      "publisher": "A&C Black"
-    },
-    {
-      "menuID": 3,
-      "title": "The Gilded Ones",
-      "author": [
-        "Namina Forna"
-      ],
-      "publisher": "Usborne Publishing Ltd"
-    },
-    {
-      "menuID": 1,
-      "title": "How to Bake",
-      "author": [
-        "Paul Hollywood"
-      ],
-      "publisher": "A&C Black"
-    },
-    {
-      "menuID": 5,
-      "title": "A Book on Books",
-      "author": [
-        "Victionary"
-      ],
-      "publisher": "Information Not Available"
-    }
+ 
   ]
 }

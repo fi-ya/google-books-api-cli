@@ -38,10 +38,14 @@ To use this project,
 # Testing
 [(Back to top)](#table-of-contents)
 
-To run tests, make sure you're in the application directory, and start the tests with:
+There are three ways you can run jest tests for this application:
+
 ```
-npm test
+npm run test  // To run all tests once
+npm run watch // To continuously keep running tests in the background
+npm run coverage // To run tests and get a coverage report
 ```
+Note: make sure you are in the correct directory before running tests.
 
 # Usage
 [(Back to top)](#table-of-contents)
@@ -79,6 +83,14 @@ It seems this error persists and can be seen when the google books API results a
 
 
 This is the [resource](https://stackoverflow.com/questions/10869276/how-to-deal-with-cyclic-dependencies-in-node-js) that helped me with this issue.
+
+***Testing***
+I had not used jest, prior to this assessment and was able to run tests to see if function existed, if data was returned correctly and run mockExit tests. However i struggled to mock axios and fs files, so was unable to test the API call and readFileSync and writeFile functions. Furthermore i understand the benefit of modular functions in carrying out successful unit tests.
+
+This is an error i kept facing and was unable to find a solution.
+
+*Error:* I tried to run tests to check that the correct message was being logged to the console, in `terminalMessages.js` however i kept getting a `deep equality` error for some functions (displayReadingListMenu, displaySearchMenu,enterBookName,enterBookNumber) and not others(readingListHeader, displaySavedToReadingList, exitGreeting).
+![Screenshot 2021-07-02 at 16 58 47](https://user-images.githubusercontent.com/69358550/124301020-238ccd80-db57-11eb-867f-b21906fe9bf6.png)
 
 
 # Bug fixes
@@ -140,6 +152,8 @@ The final result:
 [(Back to top)](#table-of-contents)
 These are some suggestions on how the program could be further developed.
 
+- Further refactoring of functions so that they are pure.
+- Running more tests
 - Searching by title and/or author
 - Delete books from the reading list.
 - Check to see if the book already exists in reading list before adding so there are no duplicates.
