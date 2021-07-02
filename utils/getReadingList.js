@@ -6,8 +6,8 @@ const { readingListHeader, displayBookDetails } = require('./terminalMessages');
 
 function getReadingList() {
   let displayReadingList = readFromReadingListJSONFile(config.readingListFile);
-  readingListHeader();
-  
+  console.log(readingListHeader());
+
   displayReadingList.readingList.forEach((item) => {
     displayBookDetails(item);
   });

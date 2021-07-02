@@ -9,7 +9,7 @@ const { errorMessageIncorrectMenuOption } = require('../utils/errorMessages');
 const { displayMainMenu } = require('../utils/terminalMessages');
 
 function mainMenu() {
-  displayMainMenu();
+  console.log(displayMainMenu());
   const menu = prompt();
 
   if (`${menu}` == 1) {

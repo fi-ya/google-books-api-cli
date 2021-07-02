@@ -7,7 +7,7 @@ const { displayReadingListMenu } = require('../utils/terminalMessages');
 
 function readingListMenu() {
   const { mainMenu } = require('./mainMenu');
-  displayReadingListMenu();
+  console.log(displayReadingListMenu());
   const readingListMenu = prompt();
 
   if (`${readingListMenu}` == 1) {

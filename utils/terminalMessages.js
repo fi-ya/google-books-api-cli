@@ -24,32 +24,27 @@ function welcomeMessage() {
 }
 
 function displayMainMenu() {
-   console.log(
-    chalk.greenBright.inverse.bold('\nMain Menu\n') +
+   return chalk.greenBright.inverse.bold('\nMain Menu\n') +
     chalk.white(
       'Select an option: \n 1: Search for Books \n 2: View Reading List \n 3: Exit\n'
-    )
   );
 }
 
 function displayReadingListMenu() {
- console.log(
-    chalk.greenBright.inverse.bold('\nReading List Menu\n') +
-    chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n')
+    return chalk.greenBright.inverse.bold('\nReading List Menu\n') +
+    chalk.white('Select an option: \n 1: Back to main menu \n 2: Exit \n'
   );
 }
 
 function displaySearchMenu() {
- console.log(
-    chalk.greenBright.inverse.bold('Search Menu\n') +
+  return chalk.greenBright.inverse.bold('Search Menu\n') +
     chalk.white(
       'Select an option: \n 1: Save book to reading list \n 2: Back to main menu\n '
-    )
   );
 }
 
 function enterBookName() {
-     console.log(chalk.white('\nWhat book would you like to search for? '));
+     return chalk.white('\nWhat book would you like to search for? ');
 }
 
 function searchingBookName(search) {
@@ -57,11 +52,7 @@ function searchingBookName(search) {
 }
 
 function enterBookNumber() {
-     console.log(
-    chalk.white(
-      '\nInsert the book number you would like to save to your reading list? '
-    )
-  );
+     return chalk.white(`\nInsert the book number you would like to save to your reading list? `);
 }
 
 function savingBookNumber(chosenBookId) {
@@ -71,7 +62,7 @@ function savingBookNumber(chosenBookId) {
 }
 
 function readingListHeader() {
-   console.log(chalk.red.bold.inverse(`\nYour reading list: `));
+   return chalk.red.bold.inverse(`\nYour reading list: `);
 }
 
 function displayBookDetails(item) {
@@ -99,7 +90,7 @@ function viewBookData(book) {
 }
 
 function displaySavedToReadingList() {
-  console.log('\nSaved to reading list!');
+  return '\nSaved to reading list!';
 }
 
 function exitGreeting() {

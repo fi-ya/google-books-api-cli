@@ -18,7 +18,7 @@ function saveToReadingList(chosenBook) {
     if (err) {
       return console.log(err);
     }
-    displaySavedToReadingList();
+    console.log(displaySavedToReadingList())
     getReadingList();
   }
 }

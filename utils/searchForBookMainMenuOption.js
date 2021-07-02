@@ -6,7 +6,8 @@ const { errorMessageIncorrectBookName } = require('./errorMessages');
 
 function searchForBookMainMenuOption() {
 
-  enterBookName()
+  console.log(enterBookName());
+  
   const search = prompt().trim();
 
   if (search === '') {

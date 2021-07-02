@@ -5,7 +5,7 @@ const {errorMessageIncorrectBookNumber} = require('./errorMessages')
 const { enterBookNumber, savingBookNumber } = require('./terminalMessages')
 
 function chooseBookToSave(bookArray) {
-  enterBookNumber();
+  console.log(enterBookNumber());
   let chosenBookId = prompt();
 
   if (`${chosenBookId}` > 0 && `${chosenBookId}` < 6) {
@@ -13,7 +13,7 @@ function chooseBookToSave(bookArray) {
     savingBookNumber(chosenBookId);
 
     if (chosenBook) saveToReadingList(chosenBook);
-    
+
   } else {
     errorMessageIncorrectBookNumber();
     chooseBookToSave(bookArray);
