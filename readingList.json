@@ -10,27 +10,19 @@
     },
     {
       "menuID": 1,
-      "title": "The World Book Encyclopedia",
-      "author": "Information Not Available",
-      "publisher": "Information Not Available"
+      "title": "Coding For Dummies",
+      "author": [
+        "Nikhil Abraham"
+      ],
+      "publisher": "John Wiley & Sons"
     },
     {
       "menuID": 1,
-      "title": "The Big Book of Football by Mundial",
+      "title": "Coding For Dummies",
       "author": [
-        "Mundial"
+        "Nikhil Abraham"
       ],
-      "publisher": "Wide Eyed Editions"
-    },
-    {
-      "menuID": 3,
-      "title": "The New York Times Book of Movies",
-      "author": [
-        "Wallace Schroeder",
-        "A. O. Scott",
-        "Manohla Dargis"
-      ],
-      "publisher": "Universe Publishing(NY)"
+      "publisher": "John Wiley & Sons"
     }
   ]
 }
