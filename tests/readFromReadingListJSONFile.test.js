@@ -1,4 +1,4 @@
-const { readFromReadingListJSONFile} = require('./readFromReadingListJSONFile')
+const { readFromReadingListJSONFile} = require('../utils/readFromReadingListJSONFile')
 const fs = require('fs');
 
 jest.spyOn(fs, 'readFileSync');

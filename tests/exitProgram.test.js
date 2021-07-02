@@ -1,5 +1,5 @@
-const { exitProgram } = require('./exitProgram');
-const { exitGreeting } = require('./terminalMessages');
+const { exitProgram } = require('../utils/exitProgram');
+const { exitGreeting } = require('../utils/terminalMessages');
 
 const mockExit = jest.spyOn(process, 'exit')
     .mockImplementation(() => { });;

@@ -1,28 +1,5 @@
 {
   "readingList": [
-    {
-      "menuID": 1,
-      "title": "Breaking Dad",
-      "author": [
-        "James Lubbock"
-      ],
-      "publisher": "Information Not Available"
-    },
-    {
-      "menuID": 1,
-      "title": "Coding For Dummies",
-      "author": [
-        "Nikhil Abraham"
-      ],
-      "publisher": "John Wiley & Sons"
-    },
-    {
-      "menuID": 1,
-      "title": "Coding For Dummies",
-      "author": [
-        "Nikhil Abraham"
-      ],
-      "publisher": "John Wiley & Sons"
-    }
+  
   ]
 }

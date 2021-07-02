@@ -1,4 +1,4 @@
-const { saveToReadingList } = require('./saveToReadingList');
+const { saveToReadingList } = require('../utils/saveToReadingList');
 const fs  = require('fs');
 
 jest.spyOn(fs, 'writeFile');

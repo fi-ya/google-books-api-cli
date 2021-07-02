@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const prompt = require('prompt-sync')();
-const { getBookDetails } = require('./getBookDetails');
+const { getBookDetailsFromAPI } = require('./getBookDetails');
 const { enterBookName , searchingBookName } = require('./terminalMessages');
 const { errorMessageIncorrectBookName } = require('./errorMessages');
 
@@ -16,7 +16,7 @@ function searchForBookMainMenuOption() {
   }
 
   searchingBookName(search);
-  getBookDetails(search);
+  getBookDetailsFromAPI(search);
 }
 
 module.exports = { searchForBookMainMenuOption };

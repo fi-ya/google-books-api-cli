@@ -1,4 +1,4 @@
-const { getReadingList } = require('./getReadingList');
+const { getReadingList } = require('../utils/getReadingList');
 
 describe('', () => {
 
