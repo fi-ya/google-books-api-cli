@@ -96,7 +96,7 @@ This is an error i kept facing and was unable to find a solution.
 # Bug fixes
 [(Back to top)](#table-of-contents)
 
-This is how i fixed the following bugs:
+My technical assessment feedback raised areas of improvement. The following details how i went about solving these bugs.
 
 ***User enters an incorrect input when choosing which book to save***
 
