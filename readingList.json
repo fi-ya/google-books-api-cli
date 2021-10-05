@@ -1,5 +1,28 @@
 {
   "readingList": [
- 
+    {
+      "menuID": 1,
+      "title": "How to Bake",
+      "author": [
+        "Paul Hollywood"
+      ],
+      "publisher": "A&C Black"
+    },
+    {
+      "menuID": 1,
+      "title": "How to Bake",
+      "author": [
+        "Paul Hollywood"
+      ],
+      "publisher": "A&C Black"
+    },
+    {
+      "menuID": 1,
+      "title": "Coding For Dummies",
+      "author": [
+        "Nikhil Abraham"
+      ],
+      "publisher": "John Wiley & Sons"
+    }
   ]
 }
